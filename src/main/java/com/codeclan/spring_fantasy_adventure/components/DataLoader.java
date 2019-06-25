@@ -1,9 +1,8 @@
 package com.codeclan.spring_fantasy_adventure.components;
+import com.codeclan.spring_fantasy_adventure.models.Enemy;
 import com.codeclan.spring_fantasy_adventure.models.Hero;
-import com.codeclan.spring_fantasy_adventure.models.Room;
 import com.codeclan.spring_fantasy_adventure.repositories.EnemyRepository;
 import com.codeclan.spring_fantasy_adventure.repositories.HeroRepository;
-import com.codeclan.spring_fantasy_adventure.repositories.RoomRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -18,33 +17,28 @@ public class DataLoader implements ApplicationRunner {
     @Autowired
     EnemyRepository enemyRepository;
 
-    @Autowired
-    RoomRepository roomRepository;
-
     public DataLoader(){
 
     }
 
     public void run(ApplicationArguments args){
-        Hero hero1 = new Hero("Venom", 100,"none");
+        Hero hero1 = new Hero("Venom", 100);
         heroRepository.save(hero1);
 
-        Hero hero2 = new Hero("Ghimli", 100, "none");
+        Hero hero2 = new Hero("Ghimli", 100);
         heroRepository.save(hero2);
 
-        Hero hero3 = new Hero("Paladin Knight", 100, "none");
+        Hero hero3 = new Hero("Paladin Knight", 100);
+        heroRepository.save(hero3);
 
-        Room room1 = new Room("basement");
-        roomRepository.save(room1);
+        Enemy enemy1 = new Enemy("Bogart", 100);
+        enemyRepository.save(enemy1);
 
-        Room room2 = new Room("firstFloor");
-        roomRepository.save(room2);
+        Enemy enemy2 = new Enemy("Trollster", 100);
+        enemyRepository.save(enemy2);
 
-        Room room3 = new Room("secondFloor");
-        roomRepository.save(room3);
-
-        Room room4 = new Room("Attic");
-        roomRepository.save(room4);
+        Enemy enemy3 = new Enemy("Orcanian", 100);
+        enemyRepository.save(enemy3);
 
     }
 }

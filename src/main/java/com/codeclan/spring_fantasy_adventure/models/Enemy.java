@@ -4,24 +4,24 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="enemies")
-public class Enemy {
+public class Enemy extends Character{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name="name")
     private String name;
-
-    @ManyToOne
-    @JoinColumn(name = "room_id", nullable = false)
-    private Room room;
+    @Column(name="health")
+    private int health;
+    @Column(name="url")
+    private String url;
 
     public Enemy() {
     }
 
-    public Enemy(String name) {
+    public Enemy(String name, int health) {
         this.name = name;
-        this.room = room;
+        this.health = health;
     }
 
     public void setName(String name) {

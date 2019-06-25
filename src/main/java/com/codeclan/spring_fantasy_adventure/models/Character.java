@@ -1,25 +1,14 @@
 package com.codeclan.spring_fantasy_adventure.models;
 
-import javax.persistence.*;
+public abstract class Character {
 
-@Entity
-@Table(name="heroes")
-public class Hero extends Character{
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    @Column(name="name")
     private String name;
-    @Column(name="health")
     private int health;
-    @Column(name="url")
-    private String url;
 
-    public Hero() {
+    public Character() {
     }
 
-    public Hero(String name, int health) {
+    public Character(String name, int health) {
         this.name = name;
         this.health = health;
     }
