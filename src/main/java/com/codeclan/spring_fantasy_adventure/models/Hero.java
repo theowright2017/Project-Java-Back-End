@@ -13,8 +13,6 @@ public class Hero extends Character{
     private String name;
     @Column(name="health")
     private int health;
-    @Column(name="url")
-    private String url;
 
     public Hero() {
     }

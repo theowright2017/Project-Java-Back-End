@@ -13,8 +13,6 @@ public class Enemy extends Character{
     private String name;
     @Column(name="health")
     private int health;
-    @Column(name="url")
-    private String url;
 
     public Enemy() {
     }
@@ -32,4 +30,13 @@ public class Enemy extends Character{
         return name;
     }
 
+    @Override
+    public int getHealth() {
+        return health;
+    }
+
+    @Override
+    public void setHealth(int health) {
+        this.health = health;
+    }
 }
